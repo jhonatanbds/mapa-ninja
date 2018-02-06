@@ -1,0 +1,20 @@
+-> npm install shapefile d3-geoprojection ndjson-cli d3-dsv
+
+-> ./node_modules/shapefile/bin/shp2json 25SEE250GC_SIR.shp -o pb.json
+
+-> ./node_modules/d3-geo-projection/bin/geoproject d3.geoOrthographic().rotate([54, 14,2]).fitSize([1000, 600], d)' < pb.json > pb-ortho.json
+
+-> ./node_modules/d3-geo-projection/bin/geo2svg \
+  -w 1000 \
+  -h 600 \
+  < pb-ortho.json \
+  > pb-ortho.svg
+
+-> ./node_modules/ndjson-cli/ndjson-split 'd.features' < pb.json > pb.ndjson
+
+-> dsv2json \
+  -r ';' \
+  -n \
+  < [csv-dos-dados] \
+  > pb-censo.ndjson
+
