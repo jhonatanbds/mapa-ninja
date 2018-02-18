@@ -1,0 +1,15 @@
+.bottom {
+    margin:0;
+    height:50;
+    width:50;
+}
+
+.top {
+    top: 600px;
+    position: absolute; 
+}
+
+.top2 {
+    top: 1300px;
+    position: absolute; 
+}
