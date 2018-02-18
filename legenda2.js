@@ -29,7 +29,7 @@ var svg = d3.select(".map2"),
     
     g.append("text")
         .attr("class", "caption")
-        .attr("x", 50)
+        .attr("x", 40)
         .attr("y", -6)
         .attr("fill", "#000")
         .attr("text-anchor", "start")

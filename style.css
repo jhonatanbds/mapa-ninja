@@ -1,15 +1,7 @@
-.bottom {
-    margin:0;
-    height:50;
-    width:50;
+.father {
+    position: relative;
 }
 
-.top {
-    top: 600px;
-    position: absolute; 
-}
-
-.top2 {
-    top: 1300px;
+.son {
     position: absolute; 
 }
