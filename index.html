@@ -1,28 +1,60 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" href="style.css">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<style>
+
+.cidades {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+}
+
+path:hover, path.highlighted {
+  fill: tomato;
+}
+
+div.tooltip {
+  position: absolute;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  font-family:"avenir next", Arial, sans-serif;
+  padding: 4px 8px;
+  display: none;
+}
+
+</style>
+<body class="container">
+  <h2>Percentual de aprendizado adequado e crescimento na paraíba</h2>
+  <div class="row">
+    <svg id="aprendizado" width="1140" height="600"></svg>
+  </div>
+  <button class="btn" onclick="change2aprendizado()">Aprendizado</button>
+  <button class="btn" onclick="change2crescimento()">Crescimento</button>  
+  <p>
+    Pelo paralelo obtido da observação dos dois mapas podemos observar que a maioria dos municípios que já tem um bom percentual de aprendizado mantém um bom crescimento. Mas contrapondo essa maioria, Várzea e Barra de Santa Rosa podem ser citados como exemplo, sendo Várzea uma das cidade com maior percentual de aprendizado do estado.
+  </p>
+</body>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://d3js.org/topojson.v2.min.js"></script>
-<body class="container">    
-    <div class="row">
-        <h2>Quantidade de domicílios com renda mensal de até 1/8 de salário mínimo na paraíba.</h2>
-        <div class="father">
-            <img src="parte1-2/pb/pb-chroropleth.svg" width="600" height="auto">
-            <svg class="map1 son" width="auto" height="auto"></svg>
-        </div>        
-    </div>
-    <div class="row">
-        <h2>Quantidade de pessoas residentes na cidade de João Pessoa de cor ou raça preta.</h2>
-        <div class="father">
-            <img src="parte1-2/jp/path1906.png" width="600" height="600">
-            <svg class="map2 son" width="auto" height="auto"></svg>
-        </div>        
-    </div>
-</body>
-<script src="parte1-2/pb/legenda1.js"></script>
-<script src="parte1-2/pb/legenda2.js"></script>
+<script src="parte3-4/aprendizagem-pb/crescimento-pb.js"></script>
+<script src="parte3-4/aprendizagem-pb/aprendizado-pb.js"></script>
+<script>
+  aprendizado();
+</script>
+<script>
+  function change2crescimento() {
+    document.getElementById("aprendizado").id = "crescimento";
+    crescimento();
+  }
+  function change2aprendizado() {
+    document.getElementById("crescimento").id = "aprendizado";
+    aprendizado();
+  }  
+</script>
+
+

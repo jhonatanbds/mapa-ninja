@@ -6,7 +6,7 @@ var svg = d3.select(id),
 var path = d3.geoPath();
 
 // função aux definida em legenda-d3-cor.js
-desenhaLegenda(min, max, color, nomeVariavel)
+//desenhaLegenda(min, max, color, nomeVariavel)
 
 d3.queue()
     .defer(d3.json, "geo4-municipios-e-aprendizado-simplificado.json")
@@ -70,4 +70,5 @@ function moveTooltip() {
 function hideTooltip() {
   tooltip.style("display","none");
 }
+return svg;
 }
